@@ -7,15 +7,13 @@
  */
 #include "key.h"
 #include "led.h"
-
-void nixie_tube(uc pos, uc n)
-{
-        switch (pos) {
-                case 1: break;
-        }
-}
+#include "nixie-tube.h"
 
 void main()
 {
-
+    while(1) {
+        nixie_tube(2,2);
+        nixie_tube(3,5);
+        nixie_tube(4,10);
+    }
 }
