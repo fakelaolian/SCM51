@@ -34,8 +34,3 @@ void nixie_tube(uc pos, uc n)
         delay_time(1);
         P0 = 0x0;
 }
-
-void xnprintk(u8 n)
-{
-
-}
