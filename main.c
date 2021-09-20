@@ -8,12 +8,12 @@
 #include "key.h"
 #include "led.h"
 #include "nixie-tube.h"
+#include "LCD1602.h"
 
 void main()
 {
+    lcd_init();
     while(1) {
-        nixie_tube(2,2);
-        nixie_tube(3,5);
-        nixie_tube(4,10);
+            printfk(1, 0, "Hello %s", "MC51");
     }
 }
