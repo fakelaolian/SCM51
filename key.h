@@ -20,19 +20,6 @@
 #define __KEY4  P3_3
 
 /* ÅĞ¶Ï¼üÅÌÊÇ·ñ°´ÏÂ */
-#define getkey_press(__key, __execblock)\
-if(__key == 1) {\
-    delay_time(6);\
-    if(__key == 0)\
-        __execblock\
-}
-
-/* ÅĞ¶Ï¼üÅÌÊÇ·ñÊÍ·Å */
-#define getkey_release(__key, __execblock)\
-if(__key == 0) {\
-    delay_time(6);\
-    if(__key == 1)\
-        __execblock\
-}
+uc getkey();
 
 #endif /* INC_51_KEY_H */
