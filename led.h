@@ -33,7 +33,6 @@
  * F        1111
  */
 #include <REGX52.H>
-#include <types.h>
 
 /* led */
 #define __led    P2
@@ -46,6 +45,11 @@
 #define __led6 P2_6
 #define __led7 P2_7
 
+static void __delay(uc time)
+{
+        while(time--);
+}
+
 /* 点亮LED */
 void led_on(uc ledseq);
 /* 熄灭LED */
@@ -56,5 +60,26 @@ void led_off(uc ledseq);
 void led_flash();
 /* led流水灯 */
 void led_water_lamp();
+/* led呼吸灯, n表示操作哪个led等， s表示呼吸灯速度。 */
+#define led_breath_light(n, s)                                     \
+{                                                                  \
+        uc __time, __i;                                            \
+        for (__time = 0; __time < s; __time++) {                   \
+                for (__i = 0; __i < 20; __i++) {                   \
+                        __led##n = 0;                              \
+                        __delay(__time);                           \
+                        __led##n = 1;                              \
+                        __delay(s - __time);                       \
+                }                                                  \
+        }                                                          \
+        for (__time = 100; __time > 0; __time--) {                 \
+                for (__i = 0; __i < 20; __i++) {                   \
+                        __led##n = 0;                              \
+                        __delay(__time);                           \
+                        __led##n = 1;                              \
+                        __delay(s - __time);                       \
+                }                                                  \
+        }                                                          \
+}
 
 #endif //INC_51_LED_H

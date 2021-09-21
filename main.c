@@ -5,16 +5,12 @@
  * [i] Fuck You.
  * [i] END.............................................................
  */
+#include "led.h"
 #include "ds18b20.h"
-
-float temp;
 
 void main()
 {
-        lcd_init();
-        ds18b20_init();
-        printfk(1, 0, "TEMP: ");
         while (1) {
-                print_t(2);
+                led_breath_light(0, 100)
         }
 }
