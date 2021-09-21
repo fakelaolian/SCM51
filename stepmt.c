@@ -11,7 +11,7 @@ static uc counter, compv, speed;
 
 void stepmt_init()
 {
-        mt_timer_init();
+        timer0_init();
         compv = 0;
         speed = 0;
 }

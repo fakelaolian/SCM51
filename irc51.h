@@ -12,8 +12,15 @@
 
 #include "tool.h"
 #include "types.h"
-#include <REGX52.H>
+#include "timer0.h"
+#include "int0.h"
+#include "LCD1602.h"
 
+/* ≥ı ºªØ÷–∂œ */
 void irc51_init();
+uc irc51_get_data_flag();
+uc irc51_get_repeat_flag();
+uc irc51_get_addr();
+uc irc51_get_command();
 
 #endif /* INC_51_IRC51_H */

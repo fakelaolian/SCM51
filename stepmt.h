@@ -11,7 +11,7 @@
 #define INC_51_STEP_MOTOR_H
 
 #include "types.h"
-#include "timer.h"
+#include "timer0.h"
 #include <REGX52.H>
 
 sbit MT = P1^0;

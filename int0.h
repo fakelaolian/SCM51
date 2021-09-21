@@ -5,10 +5,11 @@
  * [i] Fuck You.
  * [i] END.............................................................
  */
-#ifndef INC_51_TIMER_H
-#define INC_51_TIMER_H
+#ifndef INC_51_INT0_H
+#define INC_51_INT0_H
 
-void mt_timer_init();
-void irc51_timer_init();
+#include <REGX52.H>
 
-#endif /* INC_51_TIMER_H */
+void int0_init();
+
+#endif /* INC_51_INT0_H */
