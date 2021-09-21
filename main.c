@@ -5,15 +5,16 @@
  * [i] Fuck You.
  * [i] END.............................................................
  */
-#include "key.h"
-#include "led.h"
-#include "nixie-tube.h"
-#include "LCD1602.h"
+#include "ds18b20.h"
+
+float temp;
 
 void main()
 {
-    lcd_init();
-    while(1) {
-            printfk(1, 0, "Hello %s", "MC51");
-    }
+        lcd_init();
+        ds18b20_init();
+        printfk(1, 0, "TEMP: ");
+        while (1) {
+                print_t(2);
+        }
 }
