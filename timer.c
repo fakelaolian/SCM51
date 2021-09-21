@@ -5,7 +5,7 @@
  * [i] Fuck You.
  * [i] END.............................................................
  */
-#include "timer0.h"
+#include "timer.h"
 #include <REGX52.H>
 
 /**
@@ -13,7 +13,7 @@
   * @param  无
   * @retval 无
   */
-void timer0_init(void)
+void mt_timer_init(void)
 {
         TMOD &= 0xF0;		//设置定时器模式
         TMOD |= 0x01;		//设置定时器模式
@@ -26,17 +26,11 @@ void timer0_init(void)
         PT0=0;
 }
 
-/*定时器中断函数模板
-void timer0_routine() interrupt 1
+void irc51_timer_init()
 {
-	static unsigned int T0Count;
-	TL0 = 0x9C;		//设置定时初值
-	TH0 = 0xFF;		//设置定时初值
-	T0Count++;
-	if(T0Count>=1000)
-	{
-		T0Count=0;
-
-	}
+        IT0 = 1;
+        IE0 = 0;
+        EX0 = 1;
+        EA  = 1;
+        PX0 = 1;
 }
-*/

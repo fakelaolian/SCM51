@@ -1,13 +1,19 @@
 /* Create By TianSheng on 2021/9/20
  *
+ * ∫ÏÕ‚“£øÿ
+ *
  * [i] You can call me TianSheng.
  * [i] You can use in anywhere.
  * [i] Fuck You.
  * [i] END.............................................................
  */
-#ifndef INC_51_TIMER_H
-#define INC_51_TIMER_H
+#ifndef INC_51_IRC51_H
+#define INC_51_IRC51_H
 
-void timer0_init();
+#include "tool.h"
+#include "types.h"
+#include <REGX52.H>
 
-#endif /* INC_51_TIMER_H */
+void irc51_init();
+
+#endif /* INC_51_IRC51_H */

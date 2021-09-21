@@ -7,27 +7,40 @@
  */
 #include "stepmt.h"
 
-static uc counter, compv;
+static uc counter, compv, speed;
 
 void stepmt_init()
 {
-        timer0_init();
+        mt_timer_init();
         compv = 0;
+        speed = 0;
+}
+
+void addgear()
+{
+        speed++;
+        speed %= 6;
+        setgear(speed);
 }
 
 void setgear(uc gear)
 {
         switch (gear) {
-                case 0: compv = 0; break;
-                case 1: compv = 24; break;
-                case 2: compv = 40; break;
-                case 3: compv = 60; break;
-                case 4: compv = 80; break;
-                case 5: compv = 100; break;
+                case 0: speed = 0; compv = 0; break;
+                case 1: speed = 1; compv = 24; break;
+                case 2: speed = 2; compv = 40; break;
+                case 3: speed = 3; compv = 60; break;
+                case 4: speed = 4; compv = 80; break;
+                case 5: speed = 5; compv = 100; break;
         }
 }
 
-void timer0_routine() interrupt 1
+uc getgear()
+{
+        return speed;
+}
+
+void mt_timer_routine() interrupt 1
 {
         TL0 = 0x9C;     /* 设置定时初始值 */
         TH0 = 0xFF;     /* 设置定时初始值 */
